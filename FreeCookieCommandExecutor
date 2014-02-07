@@ -1,0 +1,33 @@
+package com.mooo.GuildHub;
+
+import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+
+public class FreeCookieCommandExecutor implements CommandExecutor {
+ 
+	public FreeCookieCommandExecutor(Camstools plugin) {
+	}
+ 
+	@Override
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		Player player = (Player) sender;
+		
+		if(label.equalsIgnoreCase("fc")){
+			
+			if(args.length == 0){
+				PlayerInventory inventory = player.getInventory();
+				inventory.addItem(new ItemStack(Material.COOKIE));
+				
+			}
+			
+		}//commandLabel
+		return false;
+	}//public boolean
+	
+	
+}//end class
